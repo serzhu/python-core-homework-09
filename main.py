@@ -7,7 +7,7 @@ def input_error(func):
         try:
             return func(*args)
         except IndexError:
-            return(f"{func.__name__}: Ask me someting")
+            return(f"{func.__name__}: Try commands: {", ".join(known_commands|exit_conditions)}")
         except TypeError:
             return(f"{func.__name__}: Check arguments")
     return inner
